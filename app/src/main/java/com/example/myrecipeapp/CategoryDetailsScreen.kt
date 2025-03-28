@@ -18,9 +18,9 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.rememberAsyncImagePainter
 
 @Composable
-fun CategoryDetailsScreen(category: Category) {
+fun CategoryDetailsScreen(modifier: Modifier = Modifier, category: Category) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
