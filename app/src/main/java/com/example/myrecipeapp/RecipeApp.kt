@@ -12,12 +12,11 @@ import androidx.navigation.toRoute
 fun RecipeApp(modifier: Modifier = Modifier) {
     val navController = rememberNavController()
     val recipeViewModel: MainViewModel = viewModel()
-    val viewState = recipeViewModel.recipeState
 
     NavHost(navController, startDestination = Recipe) {
         composable<Recipe> {
-            RecipeScreen(modifier, viewState) {
-                navController.navigate(route = it)
+            RecipeScreen(modifier, recipeViewModel.recipeState) {category ->
+                navController.navigate(route = category)
             }
         }
         composable<Category> { backstackEntry ->
